@@ -1,0 +1,17 @@
+spring:
+    application:
+        name: ServerApi
+    datasource:
+        url: ${DB_URL:jdbc:mysql://localhost:3306/news_db}
+        username: ${DB_USER:root}
+        password: ${DB_PASS:admin}
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: none
+    liquibase:
+        change-log: classpath:db/changelog/changelog.xml
+        enabled: true
+        default-schema: news_db
+server:
+    port: 8585

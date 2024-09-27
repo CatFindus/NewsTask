@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.puchinets.ui.controller.UIController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+
+  <Label fx:id="title" text="Header" wrapText="true" />
+  <Label fx:id="dateTime" text="Created" />
+  <TextArea fx:id="textField" editable="false" prefHeight="200.0" prefWidth="200.0" text="Body of News" wrapText="true" />
+    <ChoiceBox fx:id="sourceSelection" prefWidth="250.0" value="Kommersant.ru">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Kommersant.ru" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+   <ToolBar prefHeight="40.0" prefWidth="200.0">
+     <items>
+         <ChoiceBox fx:id="dayPartSelection" prefWidth="200.0" value="Full News">
+             <items>
+                 <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Morning News" />
+                     <String fx:value="Day News" />
+                     <String fx:value="Evening News" />
+                     <String fx:value="Full News" />
+                 </FXCollections>
+             </items>
+         </ChoiceBox>
+        <Button onAction="#getNewsButtonClick" text="Get News" />
+         <Button onAction="#getPrevousButtonClick" text="Previous" />
+         <Button onAction="#getNextButtonClick" text="Next" />
+     </items>
+   </ToolBar>
+   <effect>
+      <Blend />
+   </effect>
+</VBox>
